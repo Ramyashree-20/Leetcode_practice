@@ -1,0 +1,29 @@
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.  [Anagram = Same letters + Different order = New word]
+Example 1:
+Input: s = "anagram", t = "nagaram"
+Output: true
+
+Example 2:
+Input: s = "rat", t = "car"
+Output: false
+
+
+class Solution(object):
+    def isAnagram(self, s, t):
+        n = len(s)
+        m=len(t)
+        if n != m:
+           return False
+        count_s = {}
+        count_t = {}
+        for ch in s:
+            if ch in count_s:
+                count_s[ch] += 1
+            else:
+                count_s[ch] = 1
+        for ch in t:
+            if ch in count_t:
+                count_t[ch] += 1
+            else:
+                count_t[ch] = 1
+        return count_s == count_t
