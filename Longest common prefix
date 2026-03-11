@@ -13,3 +13,32 @@ class Solution(object):
             while word.find(prefix) != 0:
                 prefix = prefix[:-1]
         return prefix
+
+
+
+Step 1
+prefix = "flower"
+
+Step 2 (compare with "flow")
+flow.find("flower") → -1
+prefix = "flowe"
+
+flow.find("flowe") → -1
+prefix = "flow"
+
+flow.find("flow") → 0 ✅
+
+Now
+prefix = "flow"
+
+Step 3 (compare with "flight")
+flight.find("flow") → -1
+prefix = "flo"
+
+flight.find("flo") → -1
+prefix = "fl"
+
+flight.find("fl") → 0 ✅
+
+Final Output
+"fl"
